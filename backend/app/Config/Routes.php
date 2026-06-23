@@ -16,3 +16,7 @@ $routes->get('members/(:num)', 'MemberController::show/$1');
 $routes->post('members', 'MemberController::create');
 $routes->put('members/(:num)', 'MemberController::update/$1');
 $routes->delete('members/(:num)', 'MemberController::delete/$1');
+$routes->get(
+    'auth/profile',
+    'AuthController::profile'
+);

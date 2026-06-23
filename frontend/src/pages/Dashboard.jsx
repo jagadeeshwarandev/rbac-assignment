@@ -22,42 +22,81 @@ function Dashboard() {
     };
 
     return (
-        <>
-            <h1>Dashboard</h1>
+        <div className="container mt-4">
 
-            <h3>Total Users :
-                {data.total_users}
-            </h3>
+            <h1 className="mb-4">
+                Dashboard
+            </h1>
 
-            <h3>Total Admins :
-                {data.total_admins}
-            </h3>
+            <div className="row">
 
-            <h3>Total Managers :
-                {data.total_managers}
-            </h3>
+                <div className="col-md-3">
+                    <div className="card text-center shadow">
+                        <div className="card-body">
+                            <h5>Total Users</h5>
+                            <h2>{data.total_users}</h2>
+                        </div>
+                    </div>
+                </div>
 
-            <h3>Total Members :
-                {data.total_members}
-            </h3>
-<button
-    onClick={() => navigate("/members")}
->
-    View Members
-</button>
-<br />
-<button
-onClick={() => {
+                <div className="col-md-3">
+                    <div className="card text-center shadow">
+                        <div className="card-body">
+                            <h5>Admins</h5>
+                            <h2>{data.total_admins}</h2>
+                        </div>
+                    </div>
+                </div>
 
-localStorage.clear();
+                <div className="col-md-3">
+                    <div className="card text-center shadow">
+                        <div className="card-body">
+                            <h5>Managers</h5>
+                            <h2>{data.total_managers}</h2>
+                        </div>
+                    </div>
+                </div>
 
-navigate("/");
+                <div className="col-md-3">
+                    <div className="card text-center shadow">
+                        <div className="card-body">
+                            <h5>Members</h5>
+                            <h2>{data.total_members}</h2>
+                        </div>
+                    </div>
+                </div>
 
-}}
->
-Logout
-</button>
-        </>
+            </div>
+
+            <div className="mt-4">
+
+                <button
+                    className="btn btn-primary me-2"
+                    onClick={() => navigate("/members")}
+                >
+                    View Members
+                </button>
+
+                <button
+                    className="btn btn-info me-2"
+                    onClick={() => navigate("/profile")}
+                >
+                    Profile
+                </button>
+
+                <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                        localStorage.clear();
+                        navigate("/");
+                    }}
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
     );
 }
 

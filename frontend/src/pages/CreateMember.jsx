@@ -46,80 +46,95 @@ function CreateMember() {
     };
 
     return (
-        <div>
+        <div className="container mt-4">
 
-            <h1>Create Member</h1>
+            <div className="row justify-content-center">
 
-            <form onSubmit={handleSubmit}>
+                <div className="col-md-6">
 
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={form.name}
-                    onChange={handleChange}
-                />
+                    <div className="card shadow">
 
-                <br /><br />
+                        <div className="card-body">
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                />
+                            <h2 className="mb-4">
+                                Create Member
+                            </h2>
 
-                <br /><br />
+                            <form onSubmit={handleSubmit}>
 
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    className="form-control mb-3"
+                                    placeholder="Name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                />
 
-                <br /><br />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    className="form-control mb-3"
+                                    placeholder="Email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                />
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                />
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    className="form-control mb-3"
+                                    placeholder="Phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                />
 
-                <br /><br />
+                                <input
+                                    type="password"
+                                    name="password"
+                                    className="form-control mb-3"
+                                    placeholder="Password"
+                                    value={form.password}
+                                    onChange={handleChange}
+                                />
 
-                <select
-                    name="role"
-                    value={form.role}
-                    onChange={handleChange}
-                >
-                    <option value="admin">Admin</option>
-                    <option value="manager">Manager</option>
-                    <option value="member">Member</option>
-                </select>
+                                <select
+                                    name="role"
+                                    className="form-select mb-3"
+                                    value={form.role}
+                                    onChange={handleChange}
+                                >
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="member">Member</option>
+                                </select>
 
-                <br /><br />
+                                <select
+                                    name="status"
+                                    className="form-select mb-3"
+                                    value={form.status}
+                                    onChange={handleChange}
+                                >
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
 
-                <select
-                    name="status"
-                    value={form.status}
-                    onChange={handleChange}
-                >
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
-                </select>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success"
+                                >
+                                    Save Member
+                                </button>
 
-                <br /><br />
+                            </form>
 
-                <button type="submit">
-                    Save
-                </button>
+                        </div>
 
-            </form>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
     );

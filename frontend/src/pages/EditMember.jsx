@@ -52,62 +52,69 @@ function EditMember() {
     };
 
     return (
-        <>
-            <h1>Edit Member</h1>
+        <div className="container mt-4">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
 
-            <form onSubmit={handleSubmit}>
+                    <div className="card shadow">
+                        <div className="card-body">
 
-                <input
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                />
+                            <h2 className="mb-4">
+                                Edit Member
+                            </h2>
 
-                <br /><br />
+                            <form onSubmit={handleSubmit}>
 
-                <input
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                />
+                                <input
+                                    className="form-control mb-3"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    placeholder="Name"
+                                />
 
-                <br /><br />
+                                <input
+                                    className="form-control mb-3"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    placeholder="Email"
+                                />
 
-                <input
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                />
+                                <input
+                                    className="form-control mb-3"
+                                    name="phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                    placeholder="Phone"
+                                />
 
-                <br /><br />
+                                <select
+                                    className="form-select mb-3"
+                                    name="role"
+                                    value={form.role}
+                                    onChange={handleChange}
+                                >
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="member">Member</option>
+                                </select>
 
-                <select
-                    name="role"
-                    value={form.role}
-                    onChange={handleChange}
-                >
-                    <option value="admin">
-                        Admin
-                    </option>
+                                <button
+                                    type="submit"
+                                    className="btn btn-warning"
+                                >
+                                    Update Member
+                                </button>
 
-                    <option value="manager">
-                        Manager
-                    </option>
+                            </form>
 
-                    <option value="member">
-                        Member
-                    </option>
-                </select>
+                        </div>
+                    </div>
 
-                <br /><br />
-
-                <button type="submit">
-                    Update
-                </button>
-
-            </form>
-
-        </>
+                </div>
+            </div>
+        </div>
     );
 }
 

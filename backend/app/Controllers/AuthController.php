@@ -54,12 +54,12 @@ class AuthController extends BaseController
             $user['password']
         ))
         {
-return $this->response
-    ->setStatusCode(401)
-    ->setJSON([
-        'status'=>false,
-        'message'=>'Invalid Password'
-    ]);
+        return $this->response
+            ->setStatusCode(401)
+            ->setJSON([
+                'status'=>false,
+                'message'=>'Invalid Password'
+            ]);
         }
         $payload = [
             'id' => $user['id'],
@@ -91,5 +91,13 @@ return $this->response
         //     'message'=>'Login Success',
         //     'user'=>$user
         // ]);
+    }
+    public function profile()
+    {
+        $userModel = new UserModel();
+
+        $user = $userModel->find(2);
+
+        return $this->response->setJSON($user);
     }
 }

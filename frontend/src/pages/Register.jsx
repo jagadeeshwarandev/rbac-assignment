@@ -36,65 +36,83 @@ function Register() {
     };
 
     return (
-        <>
-            <h1>Register</h1>
+        <div className="container mt-5">
 
-            <form onSubmit={handleSubmit}>
+        <div className="row justify-content-center">
 
-                <input
-                    name="name"
-                    placeholder="Name"
-                    onChange={handleChange}
-                />
+        <div className="col-md-5">
 
-                <br/><br/>
+        <div className="card shadow">
 
-                <input
-                    name="email"
-                    placeholder="Email"
-                    onChange={handleChange}
-                />
+        <div className="card-body">
 
-                <br/><br/>
+        <h2 className="mb-4 text-center">
+        Register
+        </h2>
 
-                <input
-                    name="phone"
-                    placeholder="Phone"
-                    onChange={handleChange}
-                />
+        <form onSubmit={handleSubmit}>
 
-                <br/><br/>
+        <input
+        className="form-control mb-3"
+        name="name"
+        placeholder="Name"
+        onChange={handleChange}
+        />
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                />
+        <input
+        className="form-control mb-3"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+        />
 
-                <br/><br/>
+        <input
+        className="form-control mb-3"
+        name="phone"
+        placeholder="Phone"
+        onChange={handleChange}
+        />
 
-                <select
-                    name="role"
-                    onChange={handleChange}
-                >
-                    <option value="member">
-                        Member
-                    </option>
+        <input
+        type="password"
+        className="form-control mb-3"
+        name="password"
+        placeholder="Password"
+        onChange={handleChange}
+        />
 
-                    <option value="manager">
-                        Manager
-                    </option>
-                </select>
+        <select
+        className="form-select mb-3"
+        name="role"
+        onChange={handleChange}
+        >
+        <option value="member">
+        Member
+        </option>
 
-                <br/><br/>
+        <option value="manager">
+        Manager
+        </option>
+        </select>
 
-                <button type="submit">
-                    Register
-                </button>
+        <button
+        type="submit"
+        className="btn btn-success w-100"
+        >
+        Register
+        </button>
 
-            </form>
-        </>
+        </form>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        </div>
     );
 }
 
